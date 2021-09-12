@@ -1,6 +1,7 @@
 from sqlmodel import SQLModel
 from app.database.session import engine
 from app.models.product import Product
+from app.models.expense import Expense
 
 
 def create_db_and_tables():
