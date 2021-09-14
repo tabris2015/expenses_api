@@ -1,6 +1,5 @@
 from typing import Any, Dict, Generic, List, Optional, Type, TypeVar, Union
 from sqlmodel import SQLModel, Session
-from app.database import session
 
 ModelType = TypeVar("ModelType", bound=SQLModel)
 CreateModelType = TypeVar("CreateModelType", bound=SQLModel)
