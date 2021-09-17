@@ -10,6 +10,7 @@ def create_db_and_tables():
 
 
 def main():
+    print("Creating Database tables...")
     create_db_and_tables()
 
 

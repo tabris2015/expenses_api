@@ -1,9 +1,12 @@
-from typing import Optional
-from sqlmodel import SQLModel, Field
+from typing import Optional, List
+from sqlmodel import SQLModel, Field, Relationship
+# from app.models.expense import Expense
 
 
 class CategoryBase(SQLModel):
     name: Optional[str]
+
+    expenses: List["Expense"] = Relationship(back_populates="category")
 
 
 class Category(CategoryBase, table=True):
