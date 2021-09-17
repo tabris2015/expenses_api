@@ -10,8 +10,6 @@ services:
       K_CONFIGURATION: "local"
       K_REVISION: "local-00001"
       DATABASE_URI: "postgresql://user:password@db/fastapi"
-    volumes:
-      - ./database.db:/database.db:rw
     depends_on:
       - db
 
