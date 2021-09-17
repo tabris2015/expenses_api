@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fastapi-backend-configmap
+data:
+  PORT: "8000"
+  DATABASE_URI: "postgresql://user:password@postgres-service/fastapi"
+  POSTGRES_USER: user
+  POSTGRES_PASSWORD: password
+  POSTGRES_DB: fastapi
