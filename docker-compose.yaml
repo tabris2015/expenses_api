@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  fastapi-backend:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      PORT: "8000"
+      K_SERVICE: "local"
+      K_CONFIGURATION: "local"
+      K_REVISION: "local-00001"
+      DATABASE_URI: "postgresql://user:password@db/fastapi"
+    volumes:
+      - ./database.db:/database.db:rw
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data/
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: fastapi
+
+    ports:
+      - "5432:5432"
+
+volumes:
+  db_data: {}
